@@ -7,6 +7,7 @@ import { BsCart3, BsPerson } from "react-icons/bs";
 import Link from "next/link";
 import { useAppSelector } from "@/app/store/hooks";
 import cart from "@/app/store/features/cart";
+import LoginForm from "@/app/login/page";
 
 const Navber = () => {
   const cart = useAppSelector((state) => state.cart) 
@@ -25,12 +26,13 @@ const Navber = () => {
               <li>
                 <details>
                   <summary>Shop</summary>
-                  <ul className="p-2 hover:text-myred">
+                 <Link href="/sign-in">
+                 <ul className="p-2 hover:text-myred">
                     <li><Link href='/woman'>woman's Cloths</Link></li>
                     <li><Link href='/man'>Man's Cloths</Link></li>
                     <li><Link href='/shoe'>Shoe And Bags</Link></li>
                     <li><Link href='/kid'>Kid's Clothes</Link></li>
-                  </ul>
+                  </ul></Link>
                 </details>
               </li>
               <li><Link href='/arival'>New Arrival</Link></li>
@@ -59,7 +61,9 @@ const Navber = () => {
             </button>
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
-               <Link href={'/login'}> <BsPerson className="h-6 w-6" /></Link>
+               <Link href={'/stripe-payment'}> <BsPerson className="h-6 w-6" />
+              
+               </Link>
               </div>
             </button>
           <div className="flex-none">
@@ -71,15 +75,14 @@ const Navber = () => {
                   <span className="badge badge-sm indicator-item group-hover:text-white ">
                   {cart.length}
                      </span>
-
                  )} 
-                  
-                   
                 </div>
               </div>
               </Link>
           </div>
         </div>
+
+        
       </div>
     </nav>
 

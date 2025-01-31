@@ -1,14 +1,9 @@
 import CategoryPage from "./categoryPage";
-
-
-function Category({ params }: { params: { category: string } }) {
- 
-
+function Category() {
   return (
     <CategoryPage/>
   )
 }
-
 export default Category;
 
 

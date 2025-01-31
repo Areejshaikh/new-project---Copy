@@ -57,18 +57,18 @@ export default function TopSelling() {
     };
 
     return (
-        <div className="w-full max-w-screen-xl mx-auto bg-gray-100 mb-0 mt-24">
-            <h2 className="text-center capitalize py-8 text-[48px] text- font-bold leading-[48px] tracking-[4%]">
+        <div className="w-full overflow-hidden max-w-screen-xl mx-auto bg-gray-100 mb-0 mt-24">
+            <h2 className="text-center capitalize py-8 text-3xl md:text-[48px] text- font-bold leading-[48px] tracking-[4%]">
                 Top Selling Items
             </h2>
             <Slider {...settings} className="gap-x-4">
                 {productslist.slice(2, 8).map((product) => {
                     return (
                         <div key={product._id}
-                            className="mx-auto max-w-screen-2xl">
+                            className="mx-auto max-w-screen-2xl ml-14 md:ml-0">
 
 
-                            <div className=" rounded-md w-[240px] h-[240px] group mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
+                            <div className=" rounded-2xl w-[240px] h-[240px] group mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
                                 <Link href={`/${product.category}/${product.slug.current}`} >
                                     {/* Display product image */}
                                     <Image
@@ -76,11 +76,11 @@ export default function TopSelling() {
                                         alt={product.name}
                                         width={140}
                                         height={94}
-                                        className=" rounded-md transition-all duration-300 group-hover:brightness-50 group-hover:shadow-lg group-hover:shadow-black w-[240px] h-[240px]  mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6"
+                                        className=" rounded-2xl transition-all duration-300 group-hover:brightness-50 group-hover:shadow-lg group-hover:shadow-black w-[240px] h-[240px]  mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6"
                                     />
                                 </Link>
                             </div>
-                            <div className="w-[140px] h-[94px] ml-12">
+                            <div className="w-[140px] h-[94px]">
                                 <div className="w-[255px] h-[24px] my-4">
                                     <h1 className="text-sm line-clamp-2 leading-2 font-medium ">{product.name}</h1>
                                 </div>

@@ -1,9 +1,11 @@
-import {Package} from './type'
+import { Package } from "./type";
+
 interface Product extends Package {
+  dimensions: any;
+  weight: any;
   name: string
   
 }
-// suppose user add this products in cart and want to ship , you can get this products from cart
 
 export const cartProductsWhichCanBeShipped: Product[] = [
   {

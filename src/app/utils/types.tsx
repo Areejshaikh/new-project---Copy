@@ -4,13 +4,7 @@ export type Product = {
     name: string,
     price: number,
     description: string,
-    imageUrl: string[] | string | StaticImageData | undefined | any,
-    // imageUrl?:{
-    //     assets : {
-    //         _ref: string;
-    //         _type:"image";
-
-    //     }}
+    imageUrl: string[] | string | StaticImageData,
     slug:{
         _type:"slug";
         current: "string";
@@ -19,7 +13,7 @@ export type Product = {
     category: string,
     discountPercent: number,
     new: boolean,
-    color: string[] |string | undefined | any,
+    colors: string[],
     sizes: string[],
     quantity:number,
     rating:number
@@ -29,12 +23,12 @@ export type cart = {
     name: string,
     price: number,
     description: string,
-    imageUrl: string[] | string | StaticImageData | undefined | any,
+    image: string[] | string | StaticImageData,
     category: string,
     discountPercent: number,
     new: boolean,
-    color: string[] |string | undefined | any,
-    sizes: string[],
+    colors: string[] ,
+    sizes: string[] ,
     quantity:number,
     slug: string,
     uuid: string | undefined |number,

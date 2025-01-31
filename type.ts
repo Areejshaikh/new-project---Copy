@@ -1,4 +1,3 @@
-
 // Define types for the API response
 export type Address = {
   name: string;

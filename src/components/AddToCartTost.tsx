@@ -33,7 +33,7 @@ const AddToCartTost = ({ cartItem }: any) => {
             <div onClick={() => dispatch(addToCart(cartItem))}>
                 <button
                     onClick={notify}
-                    className=" py-4 xl:px-24 rounded-full shadow-lg bg-black text-white
+                    className=" py-4 px-24 xl:px-24 rounded-full shadow-lg bg-black text-white
                    hover:text-black hover:bg-white duration-500 ">
                     Add To Cart
                 </button>

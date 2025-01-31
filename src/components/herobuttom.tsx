@@ -9,12 +9,12 @@ export default function HeroButtom() {
     return (
         <section>
         
-                <div className="bg-[#0a0909] max-w-screen-xl grid grid-cols-3 sm:grid-cols-5  md:space-x-0 space-x-12 text-white mx-auto ">
-                    <Image src={vector1} alt='vector' className=" h-auto w-auto max-w-[116px] lg:max-w-48 max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl"/>
-                    <Image src={vector2} alt='vector' className="h-auto w-auto max-w-[116px] lg:max-w-48 max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl" />
-                    <Image src={vector3} alt='vector' className="h-auto w-auto max-w-[116px] lg:max-w-48 max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl" />
-                    <Image src={vector4} alt='vector' className="h-auto w-auto max-w-[116px] lg:max-w-48 max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl" />
-                    <Image src={vector5} alt='vector' className="h-auto w-auto max-w-[166px] lg:max-w-48 max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl" />
+                <div className="bg-[#0a0909] max-w-screen-xl grid grid-cols-3 sm:grid-cols-5 s text-white mx-auto ">
+                    <Image src={vector1} alt='vector' className=" h-auto w-auto max-w-[100px] max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl"/>
+                    <Image src={vector2} alt='vector' className="h-auto w-auto max-w-[100px] max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl" />
+                    <Image src={vector3} alt='vector' className="h-auto w-auto max-w-[100px] max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl" />
+                    <Image src={vector4} alt='vector' className="h-auto w-auto max-w-[100px] max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl" />
+                    <Image src={vector5} alt='vector' className="h-auto w-auto max-w-[100px] max-h-[26px] lg:max-h-9 my-5 md:my-11 text-3xl" />
                 </div>
 
             

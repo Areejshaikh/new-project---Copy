@@ -7,7 +7,7 @@ import Babge13 from "../../public/assets/Frame 53.png";
 import Link from "next/link";
 export default function Footer() {
     return (
-        <footer className="max-w-screen-xl bg-[#e0dcde] mt-24 mx-auto">
+        <footer className="max-w-screen-xl rounded-2xl bg-[#e0dcde] mt-24 mx-auto">
             <div className="  top-24 grid grid-cols-1 md:grid-cols-2 py-9 md:py-11 px-6 md:px-16  max-w-frame mx-auto bg-black rounded-[20px]">
                 <div>
                     <p className="text-white font-extrabold mx-auto  text-[44px] text-center sm:text-left">
@@ -87,7 +87,7 @@ export default function Footer() {
                             <h2 className="text-lg md:text-xl font-bold">Resources</h2>
                             <ul className="space-y-2 md:space-y-4">
                                 <li><Link href={'/'} className="text-sm md:text-base font-medium sm:w-auto md:w-[166px] w-auto">Free eBooks</Link></li>
-                                <li><Link href={'/'} className="text-sm md:text-base font-medium sm:w-auto md:w-[166px] w-auto">Development Tutorial</Link></li>
+                                <li><Link href={'/'} className="text-xs md:text-base font-medium sm:w-auto md:w-[166px] w-auto">Development</Link></li>
                                 <li><Link href={'/'} className="text-sm md:text-base font-medium sm:w-auto md:w-[166px] w-auto">How to - Blog</Link></li>
                                 <li><Link href={'/'} className="text-sm md:text-base font-medium sm:w-auto md:w-[166px] w-auto">Youtube Playlist</Link></li>
                             </ul>

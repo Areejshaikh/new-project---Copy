@@ -1,37 +1,10 @@
-// import { cookies } from 'next/headers';
-// import { NextResponse } from 'next/server';
-// import type { NextRequest } from 'next/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
-// // Middleware function
-// export const middleware = async (request: NextRequest) => {
-//     const cookiesStore = await cookies(); // No need to await this
-//     const isloggedIn = cookiesStore.get('isloggedIn');
+const isProtectedRoute = createRouteMatcher(['/dashboard(.*)', '/forum(.*)'])
 
-//     if (isloggedIn?.value === '0') {
-//         return NextResponse.redirect(new URL('/login', request.url));
-//     } if (
-//         isloggedIn?.value === "1" && 
-//     request.nextUrl.pathname === "/login") {
-//         return NextResponse.redirect(new URL('/', request.url))
-//     }
-//     return NextResponse.next();
-// };
-
-// // Config for middleware matcher
-// export const config = {
-//     matcher: '/',
-// };
-
-
-
-
-
-
-
-
-import { clerkMiddleware } from "@clerk/nextjs/server";
-
-export default clerkMiddleware();
+export default clerkMiddleware(async (auth, req) => {
+  if (isProtectedRoute(req)) await auth.protect()
+})
 
 export const config = {
   matcher: [
@@ -40,4 +13,4 @@ export const config = {
     // Always run for API routes
     '/(api|trpc)(.*)',
   ],
-};
+}

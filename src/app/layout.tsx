@@ -24,15 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <SignedOut>
-            <div className="item-left text-2xl  text-red-900">
-            <SignInButton />
-            </div>
-            
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+         
           <Providers>
             {/* <AuthProvider session={session}> */}
             <Navber />

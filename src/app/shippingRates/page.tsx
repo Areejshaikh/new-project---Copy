@@ -1,25 +1,23 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+
 import Link from "next/link";
 import { Address, Rate, trackingObjType } from "../../../type";
 import { cartProductsWhichCanBeShipped } from "../../../data";
 
-// don't judge frontend code i have build it to uderstand shipengine api 😁
 
 const ShippingRatesPage = () => {
-  // to ship address
-  // i added defualt address which help you understand structure of address
   const [shipeToAddress, setshipeToAddress] = useState<Address>({
     name: "John Doe",
     phone: "+1 555-678-1234",
     addressLine1: "1600 Pennsylvania Avenue NW",
-    addressLine2: "", // Optional
+    addressLine2: "", 
     cityLocality: "Washington",
     stateProvince: "DC",
     postalCode: "20500",
     countryCode: "US",
-    addressResidentialIndicator: "no", // 'no' means a commercial address
+    addressResidentialIndicator: "no", 
   });
 
   const [rates, setRates] = useState<Rate[]>([]);
@@ -29,7 +27,6 @@ const ShippingRatesPage = () => {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
 
-  // Function to handle form submission of shipping rates
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -39,15 +36,12 @@ const ShippingRatesPage = () => {
     try {
       const response = await axios.post("/api/shipengine/get-rates", {
         shipeToAddress,
-        // map the cart products which can be shipped and use only weight and dimensions
         packages: cartProductsWhichCanBeShipped.map((product) => ({
           weight: product.weight,
           dimensions: product.dimensions,
         })),
       });
-      // see the response in browser
       console.log(response.data);
-      // Update the state with the fetched rates
       setRates(response.data.shipmentDetails.rateResponse.rates);
     } catch (error) {
       console.log(error);
@@ -57,7 +51,6 @@ const ShippingRatesPage = () => {
     }
   };
 
-  // Function to create label from selected rate
   const handleCreateLabel = async () => {
     if (!rateId) {
       alert("Please select a rate to create a label.");
@@ -67,16 +60,12 @@ const ShippingRatesPage = () => {
     setErrors([]);
 
     try {
-      // get rateId which user selected
       const response = await axios.post("/api/shipengine/label", {
         rateId: rateId,
       });
       const labelData = response.data;
-      // see the response of label in browser
       console.log(labelData);
-      // set pdf url
       setLabelPdf(labelData.labelDownload.href);
-      // set tracking obj
       setTrackingObj({
         trackingNumber: labelData.trackingNumber,
         labelId: labelData.labelId,
@@ -91,7 +80,7 @@ const ShippingRatesPage = () => {
   };
 
   return (
-    <div id="shipment" className="min-h-screen text-black bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen my-24 text-black bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
           Shipping Rates Calculator
@@ -308,4 +297,3 @@ const ShippingRatesPage = () => {
 };
 
 export default ShippingRatesPage;
-

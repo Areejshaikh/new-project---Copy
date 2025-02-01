@@ -15,17 +15,17 @@ export default function SlugImages({ image }: SlugImagesProps) {
   }
 
   return (
-    <div className="md:flex gap-6">
+    <div className=" max-w-screen-xl  gap-6">
      
 
       {/* Main Image Section */}
-      <div className="overflow-hidden z-10 mx-auto">
+      <div className="overflow-hidden z-10  mx-auto">
         <Image
           alt="Main Product Image"
           src={path || image[0]}
           width={1000}
           height={1000}         
-           className="w-96 h-[32rem] object-cover rounded-3xl hover:scale-125 transform transition duration-500 ease-in-out"
+           className="md:w-[32rem] w-auto h-[32rem] object-cover rounded-3xl hover:scale-125 transform transition duration-500 ease-in-out"
 
         />
       </div>
@@ -35,7 +35,7 @@ export default function SlugImages({ image }: SlugImagesProps) {
           <Image
             key={i}
             alt={`Thumbnail ${i + 1}`}
-            className="w-[15rem] h-[14.1rem] my-4 rounded-3xl cursor-pointer"
+            className="w-[12rem] h-[10.1rem] my-4 rounded-3xl cursor-pointer"
             src={item}
             width={1000}
             height={1000}
@@ -46,3 +46,5 @@ export default function SlugImages({ image }: SlugImagesProps) {
     </div>
   );
 }
+
+

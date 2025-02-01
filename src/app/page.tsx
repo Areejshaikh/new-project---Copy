@@ -1,7 +1,6 @@
 import Arrival from "@/components/arrival";
 import Hero from "@/components/hero";
 import TopSelling from "@/components/top-selling";
-import Line from "@/components/line";
 import Browser from "@/components/browser";
 // import OurCustomer from "@/components/reviews";
 import HeroButtom from "@/components/herobuttom";

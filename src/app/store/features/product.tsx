@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { Product } from '@/app/utils/types';
-import { products } from '@/app/utils/mock';
+import { Product } from '../../../../utils/types';
+import { products } from '../../../../utils/mock';
 
 // Async thunk to fetch products from Sanity
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {

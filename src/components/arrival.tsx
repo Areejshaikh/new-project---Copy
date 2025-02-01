@@ -8,11 +8,10 @@ import Slider from "react-slick";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import { Button } from "./ui/button";
-import { products } from "@/app/utils/mock";
-import { Product } from "@/app/utils/types";
+import { Product } from "../../utils/types";
+import { products } from "../../utils/mock";
 export default function ArrivalProps() {
     const [productslist, setProducts] = useState<Product[]>([])
-
     useEffect(() => {
         const getProducts = async () => {
             const data = await products();
@@ -20,8 +19,6 @@ export default function ArrivalProps() {
         };
         getProducts();
     }, []);
-
-
     const settings = {
         dots: true,
         infinite: true,
@@ -61,11 +58,11 @@ export default function ArrivalProps() {
             <h2 className="text-center  capitalize py-8 text-[48px] text- font-bold leading-[48px] tracking-[4%]">
                 New Arrival
             </h2>
-            <Slider {...settings} className="mx-auto ml-14 md:ml-0">
+            <Slider {...settings} className="mx-auto ml-24 md:ml-0">
                 {productslist.slice(5, 8).map((product) => {
                     return (
                         <div key={product._id}
-                            className="mx-auto max-w-screen-2xl">
+                            className="mx-auto  max-w-screen-2xl">
 
 
                             <div className=" rounded-2xl w-[240px] h-[240px] group mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
@@ -80,7 +77,7 @@ export default function ArrivalProps() {
                                     />
                                 </Link>
                             </div>
-                            <div className="w-[140px] h-[94px]">
+                            <div className="w-[140px] h-[94px] md:ml-14 ml-0">
                                 <div className="w-[255px] h-[24px] my-4">
                                     <h1 className="text-sm line-clamp-2 leading-2 font-medium ">{product.name}</h1>
                                 </div>
@@ -120,7 +117,7 @@ export default function ArrivalProps() {
                     )
                 })}
             </Slider>
-           <div  className="py-10  mx-auto items-center text-center">
+           <div  className="py-10  mx-auto items-center text-white text-center">
            <Link href={'/category'}>
                 <Button>View All</Button>
             </Link>

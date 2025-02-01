@@ -28,7 +28,7 @@ const reviews = [
         date: "Posted on August 17, 2023"
     },
     {
-        username: "Liam K.",
+        username: "Willim j.",
         body: "This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion.",
         img: "/assets/pic1.jpg",
         date: "Posted on August 18, 2023"

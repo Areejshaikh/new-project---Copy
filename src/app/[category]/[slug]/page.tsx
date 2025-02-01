@@ -2,7 +2,7 @@ import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 import ProductPageClient from "./ProductPageClient";
 import { use } from "react"; // ✅ Required in Next.js 15 for unwrapping params
-import { Product } from "@/app/utils/types";
+import { Product } from "../../../../utils/types";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>; // ✅ params is now a Promise

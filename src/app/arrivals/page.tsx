@@ -1,7 +1,9 @@
+import Arrival from "@/components/arrival";
+
 export default function Arrivls (){
     return (
-        <div className="my-72">
-          Arrivals
+        <div className="">
+          <Arrival/>
         </div>
     )
 }

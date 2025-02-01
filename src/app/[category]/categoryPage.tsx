@@ -1,5 +1,3 @@
-
-
 'use client'
 import Image from 'next/image';
 import { HiStar } from 'react-icons/hi2';
@@ -7,13 +5,13 @@ import { useEffect, useState } from 'react';
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import LeftSideData from "@/components/leftSideData";
-import { products } from '../utils/mock';
-import { Product } from '../utils/types';
+import { products } from '../../../utils/mock';
 import {
     Pagination, PaginationContent, PaginationEllipsis,
     PaginationItem,
     PaginationLink, PaginationNext, PaginationPrevious
 } from '../pagination/page';
+import { Product } from '../../../utils/types';
 
 export default function CategoryPage() {
     const [productslist, setProducts] = useState<Product[]>([]);

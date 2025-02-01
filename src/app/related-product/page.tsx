@@ -6,15 +6,15 @@ import { HiStar } from 'react-icons/hi2';
 import { useEffect, useState } from 'react';
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
-import { products } from "@/app/utils/mock";
-import { Product } from "@/app/utils/types";
+import { products } from "../../../utils/mock";
+import { Product } from "../../../utils/types";
 
 interface RelatedPageProps {
     category: string;
     currentProductId: string;
 }
 
-export default function RelatedPage({ category, currentProductId }: RelatedPageProps) {
+export default function RelatedProduct({ category, currentProductId }: RelatedPageProps) {
     const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
 
     useEffect(() => {

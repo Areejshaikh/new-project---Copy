@@ -25,7 +25,7 @@ const reviews = [
 
     },
     {
-        name: "Liam",
+        name: "Liam k.",
         username: "Liam K.",
         body: "As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out.",
         img: "/assets/pic1.jpg",

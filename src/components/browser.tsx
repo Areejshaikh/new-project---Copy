@@ -18,7 +18,7 @@ export default function Brands(){
                     <h1 className="text-black text-2xl md:text-4xl  font-extrabold pt-4">BROWSE BY DRESS STYLE</h1> 
                 </div>
                {/* boxes container */}
-               <Link href={"/products"}>
+               <Link href="/category">
                <div className=' flex flex-col lg:flex-row lg:flex-wrap justify-center items-center my-8   '>
                      <div className='relative bg-white w-[90%] lg:w-[400px] h-[250px] mt-4 md:mt-0 rounded-[20px]'>
                         <Image src={FrameImage1} className='w-full h-full rounded-[20px]' width={1000}  height={1000} alt='images'/>

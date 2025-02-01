@@ -13,8 +13,10 @@
   "dependencies": {
     "@clerk/nextjs": "^6.10.1",
     "@hookform/resolvers": "^3.10.0",
+    "@radix-ui/react-dialog": "^1.1.5",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-navigation-menu": "^1.2.3",
+    "@radix-ui/react-popover": "^1.1.5",
     "@radix-ui/react-slot": "^1.1.1",
     "@reduxjs/toolkit": "^2.5.0",
     "@sanity/client": "^6.24.3",
@@ -26,6 +28,7 @@
     "axios": "^1.7.9",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "^1.0.4",
     "dotenv": "^16.4.7",
     "lucide-react": "^0.469.0",
     "mongodb": "^6.12.0",

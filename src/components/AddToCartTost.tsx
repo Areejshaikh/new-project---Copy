@@ -1,21 +1,10 @@
 'use client'
-
-
-
 import { addToCart } from '@/app/store/features/cart';
 import { useAppDispatch } from '@/app/store/hooks';
 import React from 'react';
-
-
 import { ToastContainer, toast } from 'react-toastify';
-
-
-
 const AddToCartTost = ({ cartItem }: any) => {
     const dispatch = useAppDispatch();
-
-
-
     const notify = () => toast.success('Product Added Successfully', {
         position: "top-left",
         autoClose: 3000,
@@ -26,7 +15,6 @@ const AddToCartTost = ({ cartItem }: any) => {
         progress: undefined,
         theme: "light",
     });
-
 
     return (
         <>

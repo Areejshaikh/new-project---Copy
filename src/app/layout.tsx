@@ -26,11 +26,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <body className={inter.className}>
          
           <Providers>
-            {/* <AuthProvider session={session}> */}
             <Navber />
             {children}
             <Footer />
-            {/* </AuthProvider> */}
           </Providers>
 
         </body>

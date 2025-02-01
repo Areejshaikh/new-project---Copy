@@ -5,12 +5,10 @@ import { HiStar } from "react-icons/hi2";
 import AddToCartTost from "@/components/AddToCartTost";
 import { urlFor } from "@/sanity/lib/image";
 import SlugImages from "@/components/slugImage";
-import { Product } from "@/app/utils/types";
 import ProductInfo from "@/components/description";
-import { MarqueeDemo } from "@/components/reviews";
-import { MarqueeDemoVertical } from "@/components/coustomer.page";
-import RelatedPage from "@/components/related";
-// import OurCustomer from "@/components/reviews";
+import { MarqueeDemoVertical } from "@/components/customer";
+import { Product } from "../../../../utils/types";
+import RelatedProduct from "@/app/related-product/page";
 
 // Props type for ProductPageClient
 interface ProductPageClientProps {
@@ -150,12 +148,13 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                 </div>
             </div>
             {/* Product Info */}
+            <RelatedProduct category={`${product.category}`} currentProductId={`${product._id}`}/>
+
             <div className="mt-6 my-24">
                 <ProductInfo />
             </div>
             {/* Reviews */}
             <MarqueeDemoVertical />
-            <RelatedPage category={`${product.category}`} currentProductId={`${product._id}`}/>
         </section>
     );
 }

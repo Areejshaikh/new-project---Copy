@@ -3,13 +3,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
 import { HiStar } from 'react-icons/hi2';
-import { products } from '@/app/utils/mock';
-import { Product } from '@/app/utils/types';
+import { products } from '../../utils/mock';
+import { Product } from '../../utils/types';
 import { useEffect, useState } from 'react';
 import Slider from "react-slick";
-import { motion } from "motion/react";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
+import { Button } from "./ui/button";
 export default function TopSelling() {
     const [productslist, setProducts] = useState<Product[]>([])
 
@@ -65,7 +65,7 @@ export default function TopSelling() {
                 {productslist.slice(2, 8).map((product) => {
                     return (
                         <div key={product._id}
-                            className="mx-auto max-w-screen-2xl ml-14 md:ml-0">
+                            className="mx-auto max-w-screen-2xl ml-24 md:ml-0">
 
 
                             <div className=" rounded-2xl w-[240px] h-[240px] group mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
@@ -80,7 +80,7 @@ export default function TopSelling() {
                                     />
                                 </Link>
                             </div>
-                            <div className="w-[140px] h-[94px]">
+                            <div className="w-[140px] h-[94px]  md:ml-14 ml-0">
                                 <div className="w-[255px] h-[24px] my-4">
                                     <h1 className="text-sm line-clamp-2 leading-2 font-medium ">{product.name}</h1>
                                 </div>
@@ -120,15 +120,11 @@ export default function TopSelling() {
                     )
                 })}
             </Slider>
-            <div className="py-10  items-center text-center">
-                <motion.button
-                    whileHover={{ scale: 1.2, backgroundColor: "#000000" }} // Hover par effect
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                    className="px-12 py-4 rounded-full text-white shadow-lg hover:text-white hover:bg-black  text-center w-auto mx-4 md:w-52"
-                >
-                    View All
-                </motion.button>
-            </div>
+            <div  className="py-10  mx-auto items-center  text-center">
+           <Link href={'/category'}>
+                <Button>View All</Button>
+            </Link>
+           </div>
         </div>
 
 

@@ -6,7 +6,7 @@
 
 .bg-image {
     background-image: url('/assets/hero-2.jpeg');
-
+    background-repeat: no-repeat
 
 }
 

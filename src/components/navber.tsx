@@ -6,8 +6,8 @@ import { CiSearch } from "react-icons/ci";
 import { BsCart3, BsPerson } from "react-icons/bs";
 import Link from "next/link";
 import { useAppSelector } from "@/app/store/hooks";
-import cart from "@/app/store/features/cart";
-import LoginForm from "@/app/login/page";
+
+import { ComboboxDemo } from "./combobox";
 
 const Navber = () => {
   const cart = useAppSelector((state) => state.cart) 
@@ -22,12 +22,12 @@ const Navber = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 hover:bg-myred rounded-box z-[1] mt-3 w-64  p-4 shadow">
+              className="menu menu-sm dropdown-content bg-base-100  rounded-box z-[1] mt-3 w-64  p-4 shadow">
               <li>
                 <details>
                   <summary>Shop</summary>
                  <Link href="/sign-in">
-                 <ul className="p-2 hover:text-myred">
+                 <ul className="p-2">
                     <li><Link href='/woman'>woman's Cloths</Link></li>
                     <li><Link href='/man'>Man's Cloths</Link></li>
                     <li><Link href='/shoe'>Shoe And Bags</Link></li>
@@ -47,12 +47,7 @@ const Navber = () => {
         </div>
          {/* Search Bar for Desktop */}
          <div className="hidden md:block relative w-[243px]">
-          <CiSearch className="w-6 h-6 absolute top-1/2 left-12 transform -translate-y-1/2 text-lg text-gray-400" />
-          <input
-            type="text"
-            placeholder="What are you looking for?"
-            className="rounded-full pl-12 w-[430px]  ml-8 h-10 bg-gray-200 placeholder:text-sm text-sm"
-          />
+          <ComboboxDemo/>
         </div>
 
         <div className="navbar-end">
@@ -71,7 +66,7 @@ const Navber = () => {
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                 <div className="indicator">
                   <BsCart3  className="h-5 w-5 hover:text-myred:"/>
-                 { cart.length > 0  &&(
+                 { cart.length >= 0  &&(
                   <span className="badge badge-sm indicator-item group-hover:text-white ">
                   {cart.length}
                      </span>

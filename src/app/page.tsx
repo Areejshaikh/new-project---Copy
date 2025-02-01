@@ -22,7 +22,6 @@ export default function Home() {
       </Suspense>
       <MarqueeDemo/>
       <Browser />
-
     </div>
   );
 }

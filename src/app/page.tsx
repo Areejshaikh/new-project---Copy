@@ -5,9 +5,7 @@ import Browser from "@/components/browser";
 // import OurCustomer from "@/components/reviews";
 import HeroButtom from "@/components/herobuttom";
 import { Suspense } from "react";
-
 import { MarqueeDemo } from "@/components/reviews";
-import GalleryPage from "@/components/arrival";
 export default function Home() {
   return (
     <div>

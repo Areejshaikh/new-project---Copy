@@ -7,8 +7,8 @@ import { urlFor } from "@/sanity/lib/image";
 import SlugImages from "@/components/slugImage";
 import ProductInfo from "@/components/description";
 import { MarqueeDemoVertical } from "@/components/customer";
+import RelatedProductsPage from "@/app/related-product/page";
 import { Product } from "../../../../utils/types";
-import RelatedProduct from "@/app/related-product/page";
 
 // Props type for ProductPageClient
 interface ProductPageClientProps {
@@ -117,7 +117,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                     {/* Quantity and Add to Cart */}
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                         {/* Quantity Control */}
-                        <div className="flex justify-between bg-slate-200 rounded-full px-12 py-4">
+                        <div className="flex items-center bg-slate-200 rounded-full px-4 py-2">
                             <button
                                 onClick={() =>
                                     setCartItem({ ...cartItems, quantity: cartItems.quantity + 1 })
@@ -143,18 +143,18 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                         {/* Add to Cart Button */}
                         <AddToCartTost cartItem={cartItems} />
                     </div>
-
-
+                    
                 </div>
             </div>
-            {/* Product Info */}
-            <RelatedProduct category={`${product.category}`} currentProductId={`${product._id}`}/>
+            <RelatedProductsPage/>
+                   
 
-            <div className="mt-6 my-24">
-                <ProductInfo />
-            </div>
-            {/* Reviews */}
-            <MarqueeDemoVertical />
+                    {/* Product Info */}
+                    <div className="mt-6">
+                        <ProductInfo />
+                    </div>
+                    <MarqueeDemoVertical />
+
         </section>
     );
 }

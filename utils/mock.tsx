@@ -1,5 +1,5 @@
 import { client } from "@/sanity/lib/client";
-import { Product } from "../src/app/onsale/utils/types";
+import { Product } from "./types";
 
 export const products = async (): Promise<Product[]> => {
   const query = `*[_type == "products"] {

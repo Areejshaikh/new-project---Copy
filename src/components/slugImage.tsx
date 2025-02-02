@@ -23,8 +23,8 @@ export default function SlugImages({ image }: SlugImagesProps) {
         <Image
           alt="Main Product Image"
           src={path || image[0]}
-          width={1000}
-          height={1000}         
+          width={1500}
+          height={1500}         
            className="md:w-[32rem] w-auto h-[32rem] object-cover rounded-3xl hover:scale-125 transform transition duration-500 ease-in-out"
 
         />

@@ -5,13 +5,9 @@ import { useEffect, useState } from 'react';
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import LeftSideData from "@/components/leftSideData";
-import { products } from '../../../utils/mock';
-import {
-    Pagination, PaginationContent, PaginationEllipsis,
-    PaginationItem,
-    PaginationLink, PaginationNext, PaginationPrevious
-} from '../pagination/page';
 import { Product } from '../../../utils/types';
+import { products } from '../../../utils/mock';
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 
 export default function CategoryPage() {
     const [productslist, setProducts] = useState<Product[]>([]);
@@ -104,4 +100,5 @@ export default function CategoryPage() {
         </>
     );
 }
+
 

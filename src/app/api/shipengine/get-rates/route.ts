@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-import { Address, Package } from "../../../../../type";
 import { shipengine } from "@/lib/helper/shipEngine";
+import { Address, Package } from "../../../../../type";
 
 export async function POST(req: NextRequest) {
   try {
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
         carrierIds: [
           process.env.SHIPENGINE_FIRST_COURIER || "se-1597925",
           process.env.SHIPENGINE_SECOND_COURIER || "se-1597926",
-          process.env.SHIPENGINE_THIRD_COURIER || "se-1597927",
+          process.env.SHIPENGINE_THIRD_COURIER || "se-1597925",
           process.env.SHIPENGINE_FOURTH_COURIER || "se-1633391",
         ].filter(Boolean), 
       },

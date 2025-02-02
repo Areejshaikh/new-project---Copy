@@ -1,5 +1,5 @@
-import { cart } from '@/app/utils/types'
 import { createSlice } from '@reduxjs/toolkit'
+import { cart } from '../../../../utils/types';
 
 
 

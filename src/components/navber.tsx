@@ -56,7 +56,7 @@ const Navber = () => {
             </button>
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
-               <Link href={'/stripe-payment'}> <BsPerson className="h-6 w-6" />
+               <Link href='/login'> <BsPerson className="h-6 w-6" />
               
                </Link>
               </div>
@@ -66,11 +66,6 @@ const Navber = () => {
               <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
                 <div className="indicator">
                   <BsCart3  className="h-5 w-5 hover:text-myred:"/>
-                 { cart.length >= 0  &&(
-                  <span className="badge badge-sm indicator-item group-hover:text-white ">
-                  {cart.length}
-                     </span>
-                 )} 
                 </div>
               </div>
               </Link>

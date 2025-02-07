@@ -25,14 +25,14 @@ const reviews = [
 
     },
     {
-        name: "Liam k.",
-        username: "Liam K.",
+        name: "macky",
+        username: "Macky",
         body: "As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out.",
         img: "/assets/pic1.jpg",
         date: "Posted on August 17, 2023"
     },
     {
-        name: "Liam",
+        name: "Liam k",
         username: "Liam K.",
         body: "This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion.",
         img: "/assets/pic1.jpg",

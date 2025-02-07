@@ -1,6 +1,7 @@
 'use client'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Swal from "sweetalert2"
 import Image from 'next/image';
 import { HiStar } from 'react-icons/hi2';
 import { useEffect, useState } from 'react';
@@ -10,6 +11,8 @@ import { urlFor } from "@/sanity/lib/image";
 import { Button } from "./ui/button";
 import { Product } from "../../utils/types";
 import { products } from "../../utils/mock";
+import { addToCart } from "@/app/actions/action";
+import product from "@/app/store/features/product";
 export default function ArrivalProps() {
     const [productslist, setProducts] = useState<Product[]>([])
     useEffect(() => {
@@ -53,31 +56,45 @@ export default function ArrivalProps() {
         ],
     };
 
+
+
+    const handleAddToCart = (e: React.MouseEvent, product: Product) => {
+        e.preventDefault();
+        addToCart(product)
+        Swal.fire({
+            position: "top-start",
+            icon: "success",
+            title: `${product.name} added to cart`,
+            showConfirmButton: false,
+            timer: 1500,
+        })
+
+    }
     return (
         <div className="mb-0 mt-24 w-full max-w-screen-xl mx-auto bg-gray-100 overflow-hidden">
             <h2 className="text-center  capitalize py-8 text-[48px] text- font-bold leading-[48px] tracking-[4%]">
                 New Arrival
             </h2>
             <Slider {...settings} className="mx-auto ml-24 md:ml-0">
-                {productslist.slice(5, 8).map((product) => {
+                {productslist.slice(1, 8).map((product) => {
                     return (
                         <div key={product._id}
-                            className="mx-auto  max-w-screen-2xl">
-
+                            className="mx-auto  max-w-screen-2xl ">
+{/*  */}
 
                             <div className=" rounded-2xl w-[240px] h-[240px] group mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6">
-                                <Link href={`/${product.category}/${product.slug.current}`} >
-                                    {/* Display product image */}
-                                    <Image
-                                        src={urlFor(product.imageUrl).url()} // Generate URL for the product image
-                                        alt={product.name}
-                                        width={140}
-                                        height={94}
-                                        className=" rounded-2xl transition-all duration-300 group-hover:brightness-50 group-hover:shadow-lg group-hover:shadow-black w-[240px] h-[240px]  mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6"
-                                    />
+                                <Link href={`/${product.category} /${product.slug.current}`} >
+                                {/* Display product image */}
+                                <Image
+                                    src={urlFor(product.imageUrl).url()} // Generate URL for the product image
+                                    alt={product.name}
+                                    width={140}
+                                    height={94}
+                                    className=" rounded-2xl transition-all duration-300 group-hover:brightness-50 group-hover:shadow-lg group-hover:shadow-black w-[240px] h-[240px]  mb-4 flex object-cover object-center  md:mx-auto basis-1/2 sm:basis-1/4 md:basis-1/6"
+                                />
                                 </Link>
                             </div>
-                            <div className="w-[140px] h-[94px] md:ml-14 ml-0">
+                            <div className="w-[140px] h-[250px] md:ml-14 ml-0">
                                 <div className="w-[255px] h-[24px] my-4">
                                     <h1 className="text-sm line-clamp-2 leading-2 font-medium ">{product.name}</h1>
                                 </div>
@@ -91,25 +108,30 @@ export default function ArrivalProps() {
                                             <HiStar className="w-[20px] h-[20px]" />
                                         </span>
                                         <span className="w-[32px] h-[20px] text-[#7D8184] leading-5 text-sm font-semibold">
-                                          {product.rating} 
+                                            {product.rating}
                                         </span>
                                     </div>
 
 
                                     <div className=" h-[36px] text-center flex gap-4">
-                                        <p className={`text-base leading-6 font-medium text-maincolor  
-                             ${product.discountPercent > 0 &&
-                                            "line-through decoration-2 decoration-myred/70"} `} >
-                                            ${product.price * product.quantity}</p>
-                                        {product.discountPercent > 0 && (
-                                            <p className="text-base leading-6 font-medium text-maincolor">
-                                                ${(product.price - (product.price * product.discountPercent) / 100) * product.quantity}
+                                        <p className="text-base leading-6 font-medium text-maincolor  
+                          
+                                            line-through decoration-2 decoration-myred/70" >
+                                                 {product.discountPercent}
+ 
                                             </p>
-                                        )}
-                                     
+                                       
+                                            <p className="text-base leading-6 font-medium text-maincolor">
+                                                {product.price}
+                                            </p>
 
                                     </div>
 
+                                    <Button className="px-20 py-4 mx-auto items-center text-white text-center"
+                                        onClick={(e) => handleAddToCart(e, product)}>
+                                        Add To Cart
+
+                                    </Button>
 
                                 </div>
                             </div>
@@ -117,11 +139,16 @@ export default function ArrivalProps() {
                     )
                 })}
             </Slider>
-           <div  className="py-10  mx-auto items-center text-white text-center">
-           <Link href={'/category'}>
-                <Button>View All</Button>
-            </Link>
-           </div>
+
+
+
+            <div className="py-10  mx-auto items-center text-white text-center">
+                <Link href={'/category'}>
+                    <Button>View All</Button>
+                </Link>
+            </div>
+
+
         </div>
 
 

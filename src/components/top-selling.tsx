@@ -10,6 +10,8 @@ import Slider from "react-slick";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import { Button } from "./ui/button";
+import { addToCart } from "@/app/actions/action";
+import Swal from "sweetalert2";
 export default function TopSelling() {
     const [productslist, setProducts] = useState<Product[]>([])
 
@@ -55,6 +57,18 @@ export default function TopSelling() {
             },
         ],
     };
+    const handleAddToCart = (e: React.MouseEvent, product: Product) => {
+            e.preventDefault();
+            addToCart(product)
+            Swal.fire({
+                position: "top-start",
+                icon: "success",
+                title: `${product.name} added to cart`,
+                showConfirmButton: false,
+                timer: 1500,
+            })
+    
+        }
 
     return (
         <div className="w-full overflow-hidden max-w-screen-xl mx-auto bg-gray-100 mb-0 mt-24">
@@ -62,7 +76,7 @@ export default function TopSelling() {
                 Top Selling Items
             </h2>
             <Slider {...settings} className="gap-x-4">
-                {productslist.slice(2, 8).map((product) => {
+                {productslist.slice(5, 12).map((product) => {
                     return (
                         <div key={product._id}
                             className="mx-auto max-w-screen-2xl ml-24 md:ml-0">
@@ -80,7 +94,7 @@ export default function TopSelling() {
                                     />
                                 </Link>
                             </div>
-                            <div className="w-[140px] h-[94px]  md:ml-14 ml-0">
+                            <div className="w-[140px] h-[250px]  md:ml-14 ml-0">
                                 <div className="w-[255px] h-[24px] my-4">
                                     <h1 className="text-sm line-clamp-2 leading-2 font-medium ">{product.name}</h1>
                                 </div>
@@ -100,18 +114,23 @@ export default function TopSelling() {
 
 
                                     <div className=" h-[36px] text-center flex gap-4">
-                                        <p className={`text-base leading-6 font-medium text-maincolor  
-                             ${product.discountPercent > 0 &&
-                                            "line-through decoration-2 decoration-myred/70"} `} >
-                                            ${product.price * product.quantity}</p>
-                                        {product.discountPercent > 0 && (
-                                            <p className="text-base leading-6 font-medium text-maincolor">
-                                                ${(product.price - (product.price * product.discountPercent) / 100) * product.quantity}
+                                        <p className="text-base leading-6 font-medium text-maincolor  
+                          
+                                            line-through decoration-2 decoration-myred/70" >
+                                                 {product.discountPercent}
+ 
                                             </p>
-                                        )}
-                                     
+                                       
+                                            <p className="text-base leading-6 font-medium text-maincolor">
+                                                {product.price}
+                                            </p>
 
                                     </div>
+                                    <Button className="px-20 py-4 mx-auto items-center text-white text-center"
+                                        onClick={(e) => handleAddToCart(e, product)}>
+                                        Add To Cart
+
+                                    </Button>
 
 
                                 </div>

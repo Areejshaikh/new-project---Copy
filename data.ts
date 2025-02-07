@@ -1,4 +1,4 @@
-import { Package } from "./type";
+import { Package } from "./types";
 
 interface Product extends Package {
   dimensions: any;

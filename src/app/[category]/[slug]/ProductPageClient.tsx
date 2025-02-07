@@ -2,13 +2,16 @@
 import { useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { HiStar } from "react-icons/hi2";
-import AddToCartTost from "@/components/AddToCartTost";
 import { urlFor } from "@/sanity/lib/image";
 import SlugImages from "@/components/slugImage";
 import ProductInfo from "@/components/description";
 import { MarqueeDemoVertical } from "@/components/customer";
 import RelatedProductsPage from "@/app/related-product/page";
 import { Product } from "../../../../utils/types";
+// import AddToCartTost from "@/components/AddToCartTost";
+import { addToCart } from "@/app/actions/action";
+import Swal from "sweetalert2";
+import { Button } from "@/components/ui/button";
 
 // Props type for ProductPageClient
 interface ProductPageClientProps {
@@ -34,8 +37,21 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
         rating: product.rating,
     });
 
+
+    const handleAddToCart = (e: React.MouseEvent, product: Product) => {
+        e.preventDefault();
+        addToCart(product)
+        Swal.fire({
+            position: "top-start",
+            icon: "success",
+            title: `${product.name} added to cart`,
+            showConfirmButton: false,
+            timer: 1500,
+        })
+
+    }
     return (
-        <section className="max-w-screen-xl mt-10 mx-auto px-4 py-24 sm:px-6 lg:px-8">
+        <section className="max-w-screen-xl overflow-hidden mt-10 mx-auto px-4 py-24 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 {/* Product Image Section */}
                 <div className="mx-auto flex flex-wrap justify-center">
@@ -117,7 +133,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                     {/* Quantity and Add to Cart */}
                     <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                         {/* Quantity Control */}
-                        <div className="flex items-center bg-slate-200 rounded-full px-4 py-2">
+                        <div className="flex justify-between bg-slate-200 rounded-full px-12 md:px-16 py-4">
                             <button
                                 onClick={() =>
                                     setCartItem({ ...cartItems, quantity: cartItems.quantity + 1 })
@@ -126,7 +142,7 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                             >
                                 <FaPlus />
                             </button>
-                            <span className="mx-4">{cartItems.quantity}</span>
+                            <span className="mx-4 md:mx-10">{cartItems.quantity}</span>
                             <button
                                 onClick={() =>
                                     setCartItem({
@@ -141,19 +157,25 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
                         </div>
 
                         {/* Add to Cart Button */}
-                        <AddToCartTost cartItem={cartItems} />
+                        <Button
+                        className="px-28 rounded-full py-[1.7rem] "
+                            onClick={(e) => handleAddToCart(e, product)}>
+                            Add to Cart
+
+                        </Button>
+                        {/* <AddToCartTost cartItem={cartItems} /> */}
                     </div>
-                    
+
                 </div>
             </div>
-            <RelatedProductsPage/>
-                   
+            <RelatedProductsPage />
 
-                    {/* Product Info */}
-                    <div className="mt-6">
-                        <ProductInfo />
-                    </div>
-                    <MarqueeDemoVertical />
+
+            {/* Product Info */}
+            <div className="mt-6">
+                <ProductInfo />
+            </div>
+            <MarqueeDemoVertical />
 
         </section>
     );

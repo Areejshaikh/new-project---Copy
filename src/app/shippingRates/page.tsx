@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import Link from "next/link";
+import { Address, Rate, trackingObjType } from "../../../types";
 import { cartProductsWhichCanBeShipped } from "../../../data";
-import { Address, Rate, trackingObjType } from "../../../type";
 
 
 const ShippingRatesPage = () => {
@@ -80,8 +80,10 @@ const ShippingRatesPage = () => {
   };
 
   return (
+  
+    
     <div className="min-h-screen my-24 text-black bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="breadcrumbs text-sm my-8">
+    <div className="breadcrumbs text-sm my-8">
         <ul>
           <li>
             <Link href="/">Home</Link>
@@ -94,7 +96,7 @@ const ShippingRatesPage = () => {
       </div>
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
-          Shipping Rates Calculator
+          Shipping Rates Calculator 
         </h1>
 
         {/* Form Section */}

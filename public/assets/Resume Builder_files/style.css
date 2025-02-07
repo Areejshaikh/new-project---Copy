@@ -1,0 +1,243 @@
+/* reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* :root selector, which applies them globally */
+:root {
+    --primary-color: #143c57;
+    /* Example primary color */
+    --secondary-color: #fff;
+    /* Example secondary color */
+    /* --secondary-color: #cecaca; */
+    --heading-color: #9b9a9a;
+}
+
+body {
+    background-color: rgb(202, 221, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+
+}
+
+.container {
+    position: relative;
+    background: rgb(67, 68, 68);
+    width: 100%;
+    max-width: 700px;
+    min-height: 1000px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.container .left-side {
+    position: relative;
+    background-color: var(--secondary-color);
+    padding: 10%;
+}
+/* primary-heading */
+
+.primary-heading {
+    color: var(--primary-color);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+}
+
+.secondary-heading {
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    padding-right: 6rem;
+
+}
+
+
+/* Link */
+
+.links {
+    font-size: .75rem;
+    list-style: none;
+    display: flex;
+    justify-items: center;
+    gap: 1rem;
+    line-height: 2rem;
+    color: var(--heading-color);
+}
+
+
+/*sub-heading */
+.sub-heading {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 2rem;
+}
+
+/* summary-para */
+
+.summary-para {
+    font-size: 0.8rem;
+    line-height: 1.0rem;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+}
+
+
+
+/* Experience-section span */
+
+.experience-section span {
+
+    font-size: 1.0rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+
+}
+
+
+.left-side-links {
+    margin: 1rem 0 1rem 0;
+    font-size: 0.7rem;
+    color: var(--heading-color);
+    line-height: 1.0rem;
+}
+
+
+/* education-heading */
+.education-heading {
+    font-size: 0.85rem;
+    font-weight: 600;
+   
+}
+
+
+/* Right side */
+.container .right-side {
+    right: 0;
+    position: relative;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10%;
+    cursor: pointer;
+}
+
+.sub-line {
+    margin: 1rem 0rem 1rem 0rem;
+    border: 1px solid var(--secondary-color);
+    width: 8rem;
+    height: 0.1px;
+}
+/* Right Si de Heading */
+.right-side-heading{
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 2rem;
+}
+
+.profile-para {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+
+}
+
+.contact-links {
+    line-height: 1.4rem;
+    list-style: none;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    padding: 4px;
+}
+
+.contact-links span {
+   margin-left: 2px;
+   
+    
+}
+
+/* Button */
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border-color: var(--primary-color);
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+/* Profile image */
+.profile-img img {
+
+    width: 150px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+
+
+
+
+/* font icon */
+
+.fa-brands {
+    color: var(--primary-color);
+    margin-right: 0.35rem;
+    height: 2px;
+    width: 6px;
+
+}
+
+
+/* Line */
+.line {
+    margin: 1rem 0rem 1rem 0rem;
+    border: 1px solid var(--heading-color);
+    width: 26rem;
+    height: 0.1px;
+}
+/* Small Screens */
+@media (max-width: 520px){
+.container{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

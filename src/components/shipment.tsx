@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { Address, Rate, trackingObjType } from "../../type";
+import { Address, Rate, trackingObjType } from "../../types";
 import Link from "next/link";
 import { cartProductsWhichCanBeShipped } from "../../data";
 

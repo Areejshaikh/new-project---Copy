@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from "react";
 import axios from "axios";
 import { useSearchParams, useRouter } from "next/navigation";
-import { TrackingData } from "../../../type";
+import { TrackingData } from "../../../types";
 
 function TrackShipment() {
   const [labelId, setLabelId] = useState(""); 

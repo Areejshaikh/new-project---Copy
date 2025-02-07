@@ -64,15 +64,19 @@ export default function CategoryPage() {
                                             {product.rating}
                                         </span>
                                     </div>
-                                    <div className="h-[36px] text-center flex gap-4">
-                                        <p className={`text-base leading-6 font-medium text-maincolor  ${product.discountPercent > 0 && "line-through decoration-2 decoration-myred/70"}`}>
-                                            ${product.price * product.quantity}
-                                        </p>
-                                        {product.discountPercent > 0 && (
-                                            <p className="text-base leading-6 font-medium text-maincolor">
-                                                ${(product.price - (product.price * product.discountPercent) / 100) * product.quantity}
+                                    {/* Price and discount */}
+                                     <div className=" h-[36px] text-center flex gap-4">
+                                        <p className="text-base leading-6 font-medium text-maincolor  
+                          
+                                            line-through decoration-2 decoration-myred/70" >
+                                                 {product.discountPercent}
+ 
                                             </p>
-                                        )}
+                                       
+                                            <p className="text-base leading-6 font-medium text-maincolor">
+                                                {product.price}
+                                            </p>
+
                                     </div>
                                 </div>
                             </div>

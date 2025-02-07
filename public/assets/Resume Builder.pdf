@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://resume1-2.vercel.app/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="./Resume Builder_files/all.min.css">
+    <link rel="stylesheet" href="./Resume Builder_files/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="profile-img">
+                <img src="./Resume Builder_files/circle-profile-pic.jpg" alt="Profile Image">
+            </div>
+            <div class="head-section">
+                <h1 class="primary-heading">Areej Zaheer</h1>
+                <h5 class="secondary-heading">Front End Software Engineer | Back End Developer
+                </h5>
+                <ul class="links">
+                    <li>
+
+                        <span>
+                            <i class="fa-brands fa-solid fa-at"></i>
+                            areej@example.com</span>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>linkedin.com</span>
+                    </li>
+                    <li><i class="fa-brands fa-github"></i>
+                        <span>Github</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- summary -->
+            <div class="summary-section">
+                <h3 class="sub-heading">Summary</h3>
+                <div class="line"></div>
+                <p class="summary-para">
+                    Areej is a highly motivated and dedicated
+                    software engineer with a keen eye for detail.
+                    He has a strong background in programming
+                    languages like Python, Java, and JavaScript,
+                    and has recently transitioned to the field
+                    of web development. Areej is eager to learn
+                    and grow, and he has a strong passion for
+                    collaboration and problem-solving.
+                </p>
+            </div>
+            <!-- Experience -->
+            <div class="experience-section">
+                <h3 class="sub-heading">Experience</h3>
+                <div class="line"></div>
+
+                <span>Front end Developer</span>
+                <ul class="left-side-links">
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae maxime natus.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae maxime natus.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae maxime natus.</li>
+                </ul>
+                <h3 class="sub-heading">Back end developer</h3>
+                <div class="line"></div>
+                <ul class="left-side-links">
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae maxime natus.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae maxime natus.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam beatae maxime natus.</li>
+                </ul>
+            </div>
+            <div class="experience-section">
+                <h3 class="sub-heading">Projects</h3>
+                <div class="line"></div>
+                <ul class="contact-links">
+                    <li>
+                        <span>E-Commerce Website</span>
+                        <p class="left-side-links">Developed a full-stack e-commerce website with product listings, Login &amp; SignUp cart functionality, and Stripe payment integration.</p>
+                        <span>Tech Stack: Next.js, Tailwind CSS,Stripe</span><br>
+                        <a href="https://marketplace-website-rbih.vercel.app/" target="_blank">Live Demo</a> |
+                        <a href="https://github.com/Areejshaikh/marketplace-website" target="_blank">GitHub Repository</a>
+                    </li>
+                    <div class="sub-line"></div>
+                    <li>
+                        <span>Personal Portfolio Website</span>
+                        <p class="left-side-links">Created a responsive portfolio website to showcase skills, projects, and experience. Includes animations and a contact form.</p>
+                        <span>Tech Stack: Next.js, Tailwind CSS</span><br>
+                        <a href="https://nexj-js-website-css.vercel.app/" target="_blank">Live Demo</a> |
+                        <a href="https://github.com/Areejshaikh/nexj_js_website_css" target="_blank">GitHub Repository</a>
+                    </li>
+                   
+                </ul>
+            </div>
+
+            <!-- Skills -Section -->
+            <div class="skills-section" id="skillSection" style="display: block;">
+                <h3 class="sub-heading">Skills</h3>
+                <div class="line"></div>
+
+                <ul class="left-side-links">
+                    <li><strong>HTML5</strong>
+                        : Expert in creating well-structured and semantic web pages.</li>
+                    <li><strong>CSS3</strong>
+                        : Skilled in responsive design and modern layout techniques.</li>
+                    <li><strong>JavaScript</strong>: Proficient in creating dynamic, interactive websites.</li>
+                    <li><strong>Next.js</strong>: Experience in building server-side rendered React applications.</li>
+                    <li><strong>Tailwind CSS</strong>: Comfortable with utility-first CSS frameworks for fast UI
+                        development.</li>
+                </ul>
+            </div>
+            <div>
+                <button class="btn" id="toggleSkills">Hide Skills</button>
+
+            </div>
+        </div>
+
+
+        <div class="right-side">
+           
+            <div class="profile-section">
+                <h3 class="right-side-heading">Profile</h3>
+
+                <div class="sub-line"></div>
+                <p class="profile-para">
+                    I'm Areej Zaheer!<br>
+                    I am a future web
+                    developer who loves
+                    crafting beautiful,
+                    responsive websites.
+                    My expertise lies in
+                    HTML, CSS, JavaScript
+                    Next.js, and Tailwind CSS. </p>
+            </div>
+
+            <div class="contact-section">
+                <h3 class="right-side-heading">Contact</h3>
+                <div class="sub-line"></div>
+
+                <ul class="contact-links">
+                    <li>
+
+                        <i class="fa-solid fa-phone"></i>
+                        <span>+91 1234567890</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>arejzaheer96.com</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        <span>Karachi,Pakistan</span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="education-section">
+                <h3 class="right-side-heading">Education</h3>
+                <div class="sub-line"></div>
+                <ul class="contact-links">
+                    <li>
+                        <h3 class="education-heading">Bachelor's degree in Commerce (B.Com)</h3>
+                        <p>Woman Degree Girls College, Karachi, Pakistan</p>
+                    </li>
+                    <div class="sub-line"></div>
+                    <li>
+                        <p class="education-heading">Matriculation in Science</p>
+                        <span>Priniple Grammer School Karachi, Pakistan</span>
+                    </li>
+                    <div class="sub-line"></div>
+                </ul>
+            </div>
+     
+            <script src="./Resume Builder_files/script.js.download"></script>
+
+
+</div></div></body></html>

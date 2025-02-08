@@ -2,10 +2,10 @@ import 'dotenv/config';
 import { createClient } from '@sanity/client';
 
 const client = createClient({
-  projectId: "lkv1f83t",
+  projectId: "llc4vkbb",
   dataset: "production",      
   apiVersion: "2023-01-01",   
-  token:"skhiZtueuTujSYdy6gqFQoPz0e2KIjv6FHPcIxfTajXN5SSOi0f0jv6BV4aaIiHxXo4qaVciccxisub9jeXz3u6oOnyICtacOPNXBXIRrBKKyO9YKXM9bs4RitrH3lmCeR9HqbieCjFbhRyiJJ5454YwbgL2nbhoLPWuZatCfgXRfQDvDGZv",
+  token:"skUn7n1cvtRpPkdLdfgfyHXfix7UrKaguOWKtTJOCN3ddX4mUPJB65CbQmf9vuUNgg90eAxrxFgpT4qD3Xxzt28nSTFJOtIUNvyRTZGiH0NIk0riPUWnlU35W4VW7I9OQFoe7twYR7zgSiqZqARk5fTzQlFvHykLP9LpzhHpfSddsEjMyuZx",
   useCdn : false,   
 });
 

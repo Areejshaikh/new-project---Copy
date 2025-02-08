@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { createClient } from '@sanity/client';
 
 const client = createClient({
-  projectId: "llc4vkbb",
+  projectId: "lkv1f83t",
   dataset: "production",      
   apiVersion: "2023-01-01",   
   token:"skC4zmAXVWEMy51lpiBoYk0wzrHHtcBkMtGZasOZFHqxeOBhYZcnaz1Enc7z5T7VLSiVKtbib6B87n9BTMdBuPzvtf27DdBlJC98wUzJDPHj7j9A5pobfRsyHiUgS9vfn8ZbgyGvWv8vBcro4s6Fo2WPelo5aC4G48BI0SyUxBU4qCNEfgjz",
